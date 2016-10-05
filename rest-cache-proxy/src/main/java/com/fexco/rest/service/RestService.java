@@ -4,5 +4,5 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface RestService {
 
-	String fetchResponseFromBackend(final HttpServletRequest req);
+	String fetchResponseFromBackend(String uri, final HttpServletRequest req);
 }

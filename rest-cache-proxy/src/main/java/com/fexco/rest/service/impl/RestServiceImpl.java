@@ -3,8 +3,11 @@ package com.fexco.rest.service.impl;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +16,8 @@ import com.fexco.rest.service.RestService;
 
 @Service
 public class RestServiceImpl implements RestService {
+
+	static final Logger LOG = LoggerFactory.getLogger(RestServiceImpl.class);
 
     @Value("${rest.api.protocol}")
     String protocol;
@@ -39,10 +44,11 @@ public class RestServiceImpl implements RestService {
     }
 
 	@Override
-	public String fetchResponseFromBackend(HttpServletRequest req) {
+	@Cacheable(key = "#uri", cacheNames = {"rspEntityCache"})
+	public String fetchResponseFromBackend(String uri, HttpServletRequest req) {
 		String url = this.baseUrl	.concat(req.getRequestURI())
 									.concat(req.getQueryString() == null ? "" : req.getQueryString());
-		System.out.println(">>>>>>> " + url);
+		LOG.info(">>>>>>> {}", url);
 		return rt.exchange(url, HttpMethod.GET, null, String.class, new Object[]{}).getBody();
 	}
 
