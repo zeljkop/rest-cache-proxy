@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache:config xmlns:ehcache="http://www.ehcache.org/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ehcache.org/v3 ehcache-core-3.0.xsd ">
+  <ehcache:service>
+    <ehcache:service-creation-configuration xsi:type="anyType"/>
+  </ehcache:service>
+  <ehcache:default-serializers>
+    <ehcache:serializer type="">ehcache:serializer</ehcache:serializer>
+  </ehcache:default-serializers>
+  <ehcache:default-copiers>
+    <ehcache:copier type="">ehcache:copier</ehcache:copier>
+  </ehcache:default-copiers>
+  <ehcache:persistence directory=""/>
+  <ehcache:thread-pools>
+    <ehcache:thread-pool alias="" default="false" max-size="1" min-size="0"/>
+  </ehcache:thread-pools>
+  <ehcache:event-dispatch thread-pool=""/>
+  <ehcache:write-behind thread-pool=""/>
+  <ehcache:heap-store>
+    <ehcache:max-object-graph-size>1000</ehcache:max-object-graph-size>
+    <ehcache:max-object-size unit="B" xsi:type="ehcache:memory-type">9223372036854775807</ehcache:max-object-size>
+  </ehcache:heap-store>
+  <ehcache:disk-store thread-pool=""/>
+  <ehcache:cache alias="" uses-template="idvalue0">
+    <ehcache:key-type copier="" serializer="">java.lang.Object</ehcache:key-type>
+    <ehcache:value-type copier="" serializer="">java.lang.Object</ehcache:value-type>
+    <ehcache:expiry>
+      <ehcache:class>ehcache:class</ehcache:class>
+    </ehcache:expiry>
+    <ehcache:eviction-advisor>ehcache:eviction-advisor</ehcache:eviction-advisor>
+    <ehcache:loader-writer>
+      <ehcache:class>ehcache:class</ehcache:class>
+    </ehcache:loader-writer>
+    <ehcache:listeners dispatcher-concurrency="8" dispatcher-thread-pool=""/>
+    <ehcache:heap unit="entries">1</ehcache:heap>
+    <ehcache:heap-store-settings/>
+    <ehcache:disk-store-settings thread-pool="" writer-concurrency="1"/>
+    <ehcache:service-configuration xsi:type="anyType"/>
+  </ehcache:cache>
+</ehcache:config>

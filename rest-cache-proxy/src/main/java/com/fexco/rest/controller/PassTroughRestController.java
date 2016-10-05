@@ -17,6 +17,6 @@ public class PassTroughRestController {
 
 	@RequestMapping(path = "/**", method = RequestMethod.GET, produces = "application/json")
 	public String forwardRequest(HttpServletRequest req) {
-		return restService.fetchResponseFromBackend(req);
+		return restService.fetchResponseFromBackend(req.getRequestURI(), req);
 	}
 }
