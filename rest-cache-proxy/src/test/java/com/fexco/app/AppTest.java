@@ -1,4 +1,4 @@
-package com.fexco.rest.cache.proxy;
+package com.fexco.app;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

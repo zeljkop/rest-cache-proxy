@@ -1,0 +1,2 @@
+"http://localhost:8080/pcw/PCW45-12345-12345-1234X/address/ie/D02X285"
+"http://localhost:8080/pcw/PCW45-12345-12345-1234X/addressgeo/ie"
