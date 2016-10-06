@@ -30,4 +30,7 @@ Project features:
 
 - under the project folder /rest-cache-proxy/support there is:
 
-  1. REST-FEXCO-soapui-project.xml SoapUI project file that holds the REST service mock which acts as a backend.
+  1. REST-FEXCO-soapui-project.xml -> SoapUI project file that holds the REST service mock which acts as a backend.
+  2. url_list.txt -> example use with curl
+
+  			`args curl -I < url_list.txt`
